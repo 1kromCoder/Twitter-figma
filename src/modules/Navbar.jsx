@@ -12,7 +12,10 @@ const Navbar = () => {
             </div>
             <ul className='space-y-[30px] mb-[31px]'>
                 {navListRoute.map(item => (
-                    <NavLink to={`${item.path}`} key={item.id} className='flex items-center !gap-[20px]'>
+                    <NavLink to={`${item.path}`} key={item.id} className={({ isActive }) =>
+                        `flex items-center !gap-[20px] ${isActive ? "text-black-500 font-bold" : "text-black"}`
+                    }
+                    >
                         {item.icon}
                         <span>{item.title}</span>
                     </NavLink>
